@@ -1,0 +1,73 @@
+.employers-layout {
+    padding-top: var(--page-block-gap);
+    padding-bottom: clamp(44px, 7vw, 72px);
+}
+
+.employers-card {
+    overflow: hidden;
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.employers-banner {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.employers-copy {
+    display: grid;
+    gap: 17px;
+    padding: clamp(20px, 4vw, 32px);
+    color: #454c5d;
+}
+
+.employers-copy p {
+    margin: 0;
+    line-height: 1.68;
+}
+
+.employers-copy p a {
+    color: var(--accent);
+}
+
+.employers-greeting {
+    color: #202434;
+    font-size: clamp(1.14rem, 2vw, 1.28rem);
+    font-weight: 700;
+}
+
+.employers-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--page-title-gap);
+}
+
+.employers-links a {
+    display: flex;
+    align-items: center;
+    min-height: 62px;
+    padding: 16px 19px;
+    border: 1px solid #e8e9ee;
+    border-radius: 13px;
+    color: #202434;
+    font-size: 0.96rem;
+    font-weight: 650;
+    line-height: 1.45;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.employers-links a:hover {
+    border-color: rgba(157, 29, 67, 0.24);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    .employers-links {
+        grid-template-columns: 1fr;
+    }
+}

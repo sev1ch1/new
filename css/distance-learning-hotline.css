@@ -1,0 +1,181 @@
+.hotline-page .services-hero h1 {
+    max-width: 920px;
+}
+
+.hotline-content {
+    gap: var(--page-block-gap);
+}
+
+.hotline-intro {
+    display: grid;
+    gap: var(--page-block-gap);
+}
+
+.hotline-intro > p:first-child {
+    margin: 0;
+    color: #454c5d;
+    font-size: 1.03rem;
+}
+
+.hotline-contacts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.hotline-contacts article,
+.hotline-note {
+    padding: 23px 24px;
+    border: 1px solid #e8e9ee;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.hotline-contacts h3 {
+    margin: 0 0 10px;
+    color: #202434;
+    font-size: 1.12rem;
+}
+
+.hotline-contacts p {
+    margin: 0 0 12px;
+    color: #454c5d;
+}
+
+.hotline-contacts p:last-child {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+.hotline-contacts img {
+    max-width: 150px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.hotline-note {
+    margin: 0;
+    border-color: rgba(166, 24, 73, 0.14);
+    background: linear-gradient(135deg, #fff 0%, #fcf8f9 100%);
+    color: #454c5d;
+}
+
+.hotline-note a,
+.web-resource-list a {
+    color: var(--accent);
+}
+
+.hotline-note a:hover,
+.web-resource-list a:hover {
+    text-decoration: underline;
+}
+
+.hotline-documents {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#teacher-help .hotline-documents .document-link:last-child {
+    grid-column: 1 / -1;
+}
+
+.web-resource-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 7px 24px;
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+    list-style: none;
+}
+
+.web-resource-list li {
+    position: relative;
+    padding: 13px 8px 13px 23px;
+    border-bottom: 1px solid #edf0f4;
+    color: #454c5d;
+    font-size: 0.95rem;
+    line-height: 1.52;
+    overflow-wrap: anywhere;
+}
+
+.web-resource-list li:last-child {
+    border-bottom: 0;
+}
+
+.web-resource-list li::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.resource-table-card {
+    padding-bottom: 24px;
+}
+
+.resource-table-card > p {
+    margin-bottom: 22px;
+}
+
+.table-scroll {
+    overflow-x: auto;
+    border: 1px solid #e8e9ee;
+    border-radius: 13px;
+}
+
+.hotline-table {
+    width: 100%;
+    min-width: 610px;
+    border-collapse: collapse;
+    color: #404859;
+    font-size: 0.94rem;
+    line-height: 1.5;
+}
+
+.hotline-table th {
+    padding: 15px 17px;
+    color: #202434;
+    background: #f5f5f8;
+    font-weight: 650;
+    text-align: left;
+}
+
+.hotline-table th:last-child {
+    width: 245px;
+}
+
+.hotline-table td {
+    padding: 13px 17px;
+    border-top: 1px solid #e8e9ee;
+    vertical-align: top;
+}
+
+.hotline-table tr:nth-child(even) td {
+    background: #fcfcfd;
+}
+
+@media (max-width: 820px) {
+    .hotline-contacts,
+    .hotline-documents {
+        grid-template-columns: 1fr;
+    }
+
+    #teacher-help .hotline-documents .document-link:last-child {
+        grid-column: auto;
+    }
+
+    .web-resource-list {
+        padding: 5px 13px;
+    }
+}

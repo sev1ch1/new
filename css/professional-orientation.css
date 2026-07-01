@@ -1,0 +1,169 @@
+.orientation-page .services-hero h1 {
+    max-width: 920px;
+}
+
+.orientation-content {
+    gap: var(--page-block-gap);
+}
+
+.orientation-intro a,
+.orientation-documents a,
+.consultation-text a,
+.ais-card a {
+    color: var(--accent);
+}
+
+.orientation-list {
+    display: grid;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding-left: 21px;
+    color: #454c5d;
+}
+
+.orientation-resources {
+    display: grid;
+    gap: 9px;
+    padding: 16px 0;
+    border-top: 1px solid #eceef3;
+    border-bottom: 1px solid #eceef3;
+}
+
+.specialist {
+    margin-top: 18px !important;
+}
+
+.orientation-events {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--page-title-gap);
+}
+
+.orientation-event {
+    overflow: hidden;
+    border: 1px solid #e8e9ee;
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.orientation-event img {
+    display: block;
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+}
+
+.orientation-event div {
+    display: grid;
+    gap: 11px;
+    padding: 17px;
+}
+
+.orientation-event h3 {
+    min-height: 3.1em;
+    margin: 0;
+    color: #202434;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.orientation-event p {
+    display: flex;
+    gap: 13px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.orientation-event a,
+.orientation-more {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.orientation-more {
+    justify-self: start;
+}
+
+.documents-group {
+    padding: clamp(20px, 3vw, 27px);
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.documents-group h3 {
+    margin: 0 0 var(--page-title-gap);
+    color: #202434;
+    font-size: 1.12rem;
+}
+
+.orientation-documents {
+    display: grid;
+    gap: 0;
+}
+
+.orientation-documents a {
+    position: relative;
+    padding: 11px 8px 11px 38px;
+    border-top: 1px solid #eceef3;
+    color: #454c5d;
+    line-height: 1.48;
+}
+
+.orientation-documents a::before {
+    content: "ФАЙЛ";
+    position: absolute;
+    top: 14px;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.56rem;
+    font-weight: 700;
+}
+
+.orientation-documents a:hover {
+    color: var(--accent);
+}
+
+.consultation-text strong {
+    color: var(--accent);
+}
+
+.orientation-form {
+    margin-top: 0;
+}
+
+.ais-card {
+    display: grid;
+    grid-template-columns: minmax(190px, 280px) 1fr;
+    gap: 25px;
+    padding: clamp(21px, 4vw, 28px);
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.ais-card img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.ais-card p {
+    margin: 0 0 12px;
+    color: #454c5d;
+}
+
+@media (max-width: 820px) {
+    .orientation-events,
+    .ais-card {
+        grid-template-columns: 1fr;
+    }
+
+    .ais-card img {
+        max-width: 300px;
+    }
+}

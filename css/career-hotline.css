@@ -1,0 +1,55 @@
+.career-hotline-copy {
+    display: grid;
+    justify-items: start;
+    gap: 14px;
+    padding: clamp(20px, 4vw, 32px);
+    color: #454c5d;
+}
+
+.career-hotline-copy p {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.career-hotline-copy a {
+    color: var(--accent);
+}
+
+.career-hotline-copy ul {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding-left: 22px;
+    line-height: 1.55;
+}
+
+.career-hotline-copy .graduate-vk {
+    margin-top: 4px;
+}
+
+.career-material-links {
+    display: grid;
+    gap: var(--page-title-gap);
+}
+
+.career-material-links a {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 17px 20px;
+    border: 1px solid #e8e9ee;
+    border-radius: 14px;
+    background: var(--surface);
+    color: #202434;
+    font-size: 0.97rem;
+    font-weight: 650;
+    line-height: 1.48;
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.career-material-links a:hover {
+    border-color: rgba(157, 29, 67, 0.24);
+    color: var(--accent);
+    transform: translateY(-1px);
+}

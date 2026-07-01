@@ -1,0 +1,134 @@
+.section-page .header-top {
+    background: linear-gradient(135deg, #ffffff 0%, #fcfafb 100%);
+}
+
+.section-page .header-top .shell {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.section-page .header-main-content {
+    gap: 26px;
+}
+
+.section-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.section-page .logo img {
+    width: 96px;
+    height: 96px;
+}
+
+.section-brand-copy {
+    display: grid;
+    gap: 2px;
+    padding-left: 18px;
+    border-left: 1px solid var(--border);
+}
+
+.section-brand-copy span {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.section-brand-copy strong {
+    color: #272d3c;
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+
+.section-page .header-right-section {
+    gap: 25px;
+}
+
+.section-header-links {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.section-header-links a {
+    padding: 8px 13px;
+    border-radius: 999px;
+    color: #454c5d;
+    background: #f4f3f5;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.section-header-links a:hover {
+    color: var(--accent);
+    background: rgba(166, 24, 73, 0.08);
+}
+
+.section-header-links a[aria-current="page"] {
+    color: var(--accent);
+    background: rgba(166, 24, 73, 0.08);
+}
+
+.section-page .phone-link {
+    color: var(--accent);
+}
+
+.section-page .header-slogan {
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
+}
+
+.section-page {
+    --page-block-gap: 20px;
+    --page-title-gap: 12px;
+}
+
+.section-page .services-content,
+.section-page .contact-content {
+    gap: var(--page-block-gap);
+}
+
+.section-page .service-section {
+    gap: var(--page-title-gap);
+}
+
+.section-page .contact-card h2,
+.section-page .service-card h3,
+.section-page .contact-card-primary h2,
+.section-page .contact-support h2 {
+    margin-bottom: var(--page-title-gap);
+}
+
+@media (max-width: 1080px) {
+    .section-page .header-slogan {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-brand-copy {
+        display: none;
+    }
+
+    .section-page .header-right-section {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .section-page .logo img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .section-header-links {
+        flex-wrap: wrap;
+    }
+
+    .section-header-links a {
+        font-size: 0.83rem;
+        padding: 7px 11px;
+    }
+}

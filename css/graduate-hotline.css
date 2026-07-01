@@ -1,0 +1,157 @@
+.graduate-page .services-hero h1 {
+    max-width: 1020px;
+}
+
+.graduate-content {
+    gap: var(--page-block-gap);
+}
+
+.graduate-intro,
+.resource-logo-grid,
+.graduate-links,
+.education-logo-grid {
+    overflow: hidden;
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.graduate-banner {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.graduate-contact {
+    display: grid;
+    justify-items: center;
+    gap: 19px;
+    padding: clamp(20px, 4vw, 32px);
+    text-align: center;
+}
+
+.graduate-address {
+    max-width: 720px;
+    margin: 0;
+    color: #454c5d;
+    font-size: 1.04rem;
+    font-weight: 550;
+    line-height: 1.72;
+}
+
+.graduate-address a,
+.graduate-links a {
+    color: var(--accent);
+}
+
+.graduate-vk img {
+    display: block;
+    width: min(300px, 100%);
+    max-height: 48px;
+    object-fit: contain;
+}
+
+.graduate-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.graduate-actions a {
+    padding: 13px 19px;
+    border-radius: 999px;
+    background: #596779;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.graduate-actions a:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+.resource-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--page-title-gap);
+    padding: clamp(18px, 3vw, 26px);
+}
+
+.resource-logo-grid a,
+.education-logo-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    padding: 20px;
+    border: 1px solid #eef0f4;
+    border-radius: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-logo-grid a:hover,
+.education-logo-grid a:hover {
+    border-color: rgba(157, 29, 67, 0.24);
+    box-shadow: 0 7px 18px rgba(28, 36, 54, 0.05);
+}
+
+.resource-logo-grid img,
+.education-logo-grid img {
+    display: block;
+    max-width: 100%;
+    max-height: 78px;
+    object-fit: contain;
+}
+
+.graduate-links {
+    display: grid;
+    padding: clamp(18px, 3vw, 27px);
+}
+
+.graduate-links a {
+    position: relative;
+    padding: 12px 14px 12px 26px;
+    border-top: 1px solid #eceef3;
+    color: #454c5d;
+    line-height: 1.5;
+}
+
+.graduate-links a:first-child {
+    border-top: 0;
+}
+
+.graduate-links a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.graduate-links a:hover {
+    color: var(--accent);
+}
+
+.education-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--page-title-gap);
+    padding: clamp(18px, 3vw, 26px);
+}
+
+@media (max-width: 820px) {
+    .resource-logo-grid,
+    .education-logo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .graduate-actions {
+        display: grid;
+        width: 100%;
+    }
+}

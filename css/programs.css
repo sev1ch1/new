@@ -1,0 +1,679 @@
+.programs-page {
+    background: #f8f9fc;
+}
+
+.programs-page .skip-link {
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 1100;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--accent);
+    transform: translateY(-145%);
+    transition: transform 0.2s ease;
+}
+
+.programs-page .skip-link:focus {
+    transform: translateY(0);
+}
+
+.programs-page .main-nav .current > a {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.programs-page .catalog-hero {
+    padding: clamp(38px, 6vw, 56px) 0 clamp(38px, 6vw, 50px);
+    border-bottom: 1px solid var(--border);
+    color: #202434;
+    background:
+        radial-gradient(circle at 14% 15%, rgba(166, 24, 73, 0.09), transparent 33%),
+        linear-gradient(135deg, #fff 0%, #f8f5f7 100%);
+}
+
+.programs-page .catalog-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+}
+
+.programs-page .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.programs-page .breadcrumbs a:hover {
+    color: var(--accent);
+}
+
+.programs-page .catalog-hero-top {
+    align-items: end;
+}
+
+.programs-page .catalog-kicker {
+    margin: 0 0 7px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.programs-page .catalog-hero h1 {
+    margin: 0;
+    color: #202434;
+    font-size: clamp(2.15rem, 4vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+}
+
+.programs-page .catalog-hero .btn {
+    border: 0;
+    box-shadow: 0 13px 28px rgba(166, 24, 73, 0.2);
+}
+
+.programs-page .catalog-search-line {
+    width: min(720px, 100%);
+    height: 56px;
+    margin: 0;
+    border: 1px solid #e1e2e9;
+    border-radius: 14px;
+    box-shadow: 0 9px 26px rgba(28, 36, 54, 0.045);
+}
+
+.programs-page .catalog-search-line:focus-within {
+    border-color: rgba(166, 24, 73, 0.38);
+    box-shadow: 0 0 0 3px rgba(166, 24, 73, 0.08);
+}
+
+.programs-page .catalog-search-line input {
+    outline: none;
+}
+
+.programs-page .catalog-search-line button {
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: rgba(166, 24, 73, 0.08);
+    transition: background-color 0.2s ease;
+}
+
+.programs-page .catalog-search-line button:hover {
+    background: rgba(166, 24, 73, 0.14);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.programs-page .catalog-section {
+    padding: clamp(36px, 6vw, 54px) 0 clamp(52px, 8vw, 78px);
+    background: #f8f9fc;
+}
+
+.programs-page .section-head {
+    margin-bottom: 25px;
+}
+
+.programs-page .section-head h2 {
+    margin: 0 0 8px;
+    color: #202434;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+    letter-spacing: -0.03em;
+}
+
+.programs-page .section-head p {
+    margin: 0;
+}
+
+.programs-page .catalog-filters {
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.programs-page .direction-tab {
+    padding: 9px 17px;
+    border: 1px solid #e1e2e9;
+    background: #fff;
+    font-size: 0.9rem;
+}
+
+.programs-page .direction-tab.active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 7px 16px rgba(166, 24, 73, 0.12);
+}
+
+.programs-page .direction-tab.active:hover,
+.programs-page .direction-tab.active:focus-visible {
+    color: #fff;
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.programs-page .catalog-layout {
+    display: block;
+}
+
+.programs-page.filter-modal-open {
+    overflow: hidden;
+}
+
+.programs-page .filter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.programs-page .filter-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.programs-page .filter-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 19, 29, 0.44);
+    backdrop-filter: blur(3px);
+}
+
+.programs-page .catalog-sidebar.filter-panel {
+    position: relative;
+    top: auto;
+    z-index: 1;
+    display: grid;
+    align-content: start;
+    width: min(410px, 100%);
+    height: 100%;
+    max-width: none;
+    overflow-y: auto;
+    gap: 17px;
+    padding: 26px 25px;
+    border: 0;
+    border-radius: 22px 0 0 22px;
+    box-shadow: -16px 0 36px rgba(28, 36, 54, 0.14);
+    transform: translateX(22px);
+    transition: transform 0.25s ease;
+}
+
+.programs-page .filter-modal.is-open .filter-panel {
+    transform: none;
+}
+
+.programs-page .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.programs-page .sidebar-header h3 {
+    margin: 0;
+    color: #202434;
+    font-size: 1.16rem;
+}
+
+.programs-page .filter-close {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f2f5;
+    cursor: pointer;
+}
+
+.programs-page .filter-close::before,
+.programs-page .filter-close::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 11px;
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: #454c5d;
+}
+
+.programs-page .filter-close::before {
+    transform: rotate(45deg);
+}
+
+.programs-page .filter-close::after {
+    transform: rotate(-45deg);
+}
+
+.programs-page .filter-close:hover {
+    background: rgba(166, 24, 73, 0.09);
+}
+
+.programs-page .sidebar-clear-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+}
+
+.programs-page .sidebar-reset {
+    border: 0;
+    padding: 4px 0;
+    color: var(--accent);
+    background: transparent;
+    font: inherit;
+    font-size: 0.87rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.programs-page .sidebar-reset:hover {
+    color: var(--accent-dark);
+}
+
+.programs-page .sidebar-field {
+    gap: 7px;
+    color: #454c5d;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.programs-page .sidebar-field select,
+.programs-page .price-range input {
+    width: 100%;
+    padding: 11px 12px;
+    border-color: #e1e3ea;
+    border-radius: 10px;
+    color: #303748;
+    background: #fafbfc;
+    font-weight: 400;
+}
+
+.programs-page .sidebar-field select:focus,
+.programs-page .price-range input:focus {
+    border-color: rgba(166, 24, 73, 0.42);
+    box-shadow: 0 0 0 3px rgba(166, 24, 73, 0.08);
+}
+
+.programs-page .sidebar-group {
+    gap: 8px;
+    padding-top: 15px;
+    border-color: #eceef3;
+}
+
+.programs-page .sidebar-group p {
+    color: #202434;
+    font-size: 0.94rem;
+}
+
+.programs-page .check-row {
+    gap: 9px;
+    color: #454c5d;
+    font-size: 0.91rem;
+}
+
+.programs-page .check-row input {
+    width: 17px;
+    height: 17px;
+    padding: 0;
+    accent-color: var(--accent);
+}
+
+.programs-page .price-range {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.programs-page .price-slider {
+    padding: 0;
+    accent-color: var(--accent);
+}
+
+.programs-page .catalog-content {
+    gap: 14px;
+}
+
+.programs-page .catalog-toolbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 13px 16px;
+    border-color: #e7e8ed;
+    border-radius: 15px;
+    box-shadow: 0 7px 20px rgba(28, 36, 54, 0.035);
+}
+
+.programs-page .filter-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid rgba(166, 24, 73, 0.18);
+    border-radius: 10px;
+    color: var(--accent);
+    background: rgba(166, 24, 73, 0.04);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.programs-page .filter-open:hover {
+    border-color: rgba(166, 24, 73, 0.31);
+    background: rgba(166, 24, 73, 0.08);
+}
+
+.programs-page .filter-icon {
+    display: block;
+    width: 16px;
+    height: 14px;
+    background:
+        linear-gradient(var(--accent), var(--accent)) 0 2px / 16px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) 0 7px / 16px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) 0 12px / 16px 1px no-repeat;
+    position: relative;
+}
+
+.programs-page .filter-icon::before,
+.programs-page .filter-icon::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.programs-page .filter-icon::before {
+    top: 0;
+    left: 4px;
+    box-shadow: 7px 10px 0 var(--accent);
+}
+
+.programs-page .filter-count {
+    min-width: 20px;
+    height: 20px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--accent);
+    font-size: 0.76rem;
+    text-align: center;
+}
+
+.programs-page #programCount {
+    justify-self: start;
+    color: #202434;
+    font-weight: 650;
+}
+
+.programs-page .sort-buttons {
+    justify-self: end;
+    gap: 7px;
+}
+
+.programs-page .sort-btn {
+    padding: 8px 12px;
+    border-color: #e3e5ec;
+    border-radius: 9px;
+    background: #fff;
+    font-size: 0.88rem;
+}
+
+.programs-page .sort-btn.active {
+    color: #fff;
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+.programs-page .sort-btn.active:hover,
+.programs-page .sort-btn.active:focus-visible {
+    color: #fff;
+    border-color: var(--accent-dark);
+    background: var(--accent-dark);
+}
+
+.programs-page .catalog-grid {
+    gap: 13px;
+}
+
+.programs-page .catalog-empty {
+    margin: 0;
+    padding: 38px 20px;
+    border: 1px dashed #dfe2ea;
+    border-radius: 17px;
+    color: var(--muted);
+    background: #fff;
+    text-align: center;
+}
+
+.programs-page .program-card {
+    grid-template-columns: 182px minmax(0, 1fr);
+    gap: 18px;
+    padding: 13px;
+    border-color: #e7e8ee;
+    border-radius: 17px;
+    box-shadow: 0 8px 22px rgba(28, 36, 54, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.programs-page .program-card:hover {
+    border-color: rgba(166, 24, 73, 0.18);
+    box-shadow: 0 14px 30px rgba(28, 36, 54, 0.08);
+    transform: translateY(-1px);
+}
+
+.programs-page .program-thumb {
+    min-height: 165px;
+    border: 0;
+    border-radius: 13px;
+    background:
+        radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.7), transparent 27%),
+        linear-gradient(140deg, rgba(166, 24, 73, 0.18), rgba(166, 24, 73, 0.055));
+}
+
+.programs-page .program-thumb::after {
+    content: 'ЦТРТЛТ';
+    position: absolute;
+    left: 13px;
+    bottom: 13px;
+    color: rgba(125, 10, 50, 0.52);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.programs-page .program-info {
+    align-content: center;
+    gap: 8px;
+    padding: 5px 6px 5px 0;
+}
+
+.programs-page .program-info h3 {
+    margin: 0;
+    color: #202434;
+    font-size: 1.22rem;
+    line-height: 1.32;
+}
+
+.programs-page .program-info > p {
+    margin: 0;
+    color: #596173;
+    font-size: 0.94rem;
+}
+
+.programs-page .program-tag,
+.programs-page .thumb-badge {
+    border-radius: 999px;
+}
+
+.programs-page .program-meta {
+    margin: 2px 0 5px;
+}
+
+.programs-page .program-actions .btn,
+.programs-page .program-actions .link-ghost {
+    height: 40px;
+    padding: 0 17px;
+    font-size: 0.9rem;
+}
+
+.programs-page .catalog-pagination {
+    justify-content: space-between;
+    padding-top: 12px;
+}
+
+.programs-page .filter-actions {
+    position: sticky;
+    bottom: -26px;
+    margin: 4px -25px -26px;
+    padding: 18px 25px 25px;
+    border-top: 1px solid #eceef3;
+    background: #fff;
+}
+
+.programs-page .filter-actions .btn {
+    width: 100%;
+    border: 0;
+}
+
+.programs-page .pager button,
+.programs-page .page-size button {
+    border-radius: 9px;
+}
+
+.programs-page .site-footer {
+    margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+    .programs-page .catalog-toolbar {
+        grid-template-columns: auto 1fr;
+    }
+
+    .programs-page .sort-buttons {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-page .header-top .shell {
+        padding: 8px 16px;
+    }
+
+    .programs-page .header-main-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .programs-page .header-phone,
+    .programs-page .header-slogan {
+        display: none;
+    }
+
+    .programs-page .main-nav .shell {
+        justify-content: flex-end;
+        min-height: 52px;
+    }
+
+    .programs-page .main-nav .nav-item {
+        display: none;
+    }
+
+    .programs-page .main-nav .nav-toggle {
+        position: static;
+        display: flex;
+        margin: 4px 0;
+    }
+
+    .programs-page .mega-menu {
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+    }
+
+    .programs-page .mega-menu.active {
+        max-height: calc(100vh - 56px);
+    }
+
+    .programs-page .catalog-hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .programs-page .catalog-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .programs-page .direction-tab {
+        flex: 0 0 auto;
+    }
+
+    .programs-page .catalog-sidebar.filter-panel {
+        padding: 21px 18px;
+        border-radius: 0;
+    }
+
+    .programs-page .program-card {
+        grid-template-columns: 1fr;
+    }
+
+    .programs-page .program-thumb {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .programs-page .section-header-links {
+        display: none;
+    }
+
+    .programs-page .catalog-toolbar {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .programs-page .filter-open,
+    .programs-page #programCount {
+        justify-self: stretch;
+    }
+
+    .programs-page .sort-buttons {
+        justify-self: stretch;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .programs-page .catalog-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .programs-page .filter-modal,
+    .programs-page .catalog-sidebar.filter-panel {
+        transition: none;
+    }
+}

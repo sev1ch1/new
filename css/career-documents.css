@@ -1,0 +1,48 @@
+.career-documents-page .services-hero h1 {
+    max-width: 960px;
+}
+
+.career-documents-content {
+    gap: var(--page-block-gap);
+}
+
+.career-document-list {
+    display: grid;
+    padding: clamp(12px, 2vw, 20px) clamp(18px, 3vw, 26px);
+    border: 1px solid #e8e9ee;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(28, 36, 54, 0.045);
+}
+
+.career-document-list a {
+    position: relative;
+    padding: 12px 10px 12px 40px;
+    border-top: 1px solid #eceef3;
+    color: #454c5d;
+    line-height: 1.52;
+}
+
+.career-document-list a:first-child {
+    border-top: 0;
+}
+
+.career-document-list a::before {
+    content: "ФАЙЛ";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    color: var(--accent);
+    font-size: 0.56rem;
+    font-weight: 700;
+}
+
+.career-document-list a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 650px) {
+    .career-document-list {
+        padding-inline: 14px;
+    }
+}
